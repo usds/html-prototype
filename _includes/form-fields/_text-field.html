@@ -1,0 +1,25 @@
+<label
+  class="usa-label {{ include.label_classes }}"
+  for="{{ include.id }}"
+  aria-describedby="{{ include.id }}_hint">
+    {{ include.label_text }}
+    {% if include.optional == "true" %}
+      <span class="usa-hint">(optional)</span>
+    {% endif %}
+</label>
+{% if include.hint %}
+<span
+  class="usa-hint"
+  id="{{ include.id }}_hint">
+    {{ include.hint }}
+</span>
+{% endif %}
+<input
+  class="usa-input {{ include.input_classes }}"
+  id="{{ include.id }}"
+  {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
+  name="{{ include.id }}"
+  type="{% if include.type %}{{ include.type }}{% else %}text{% endif %}"
+  {% unless include.optional %}required{% endunless%}
+  {% if include.tel_keyboard %}inputmode="numeric" pattern="[0-9]*"{% endif %}
+>

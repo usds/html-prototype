@@ -1,0 +1,4 @@
+<div class="usa-radio">
+  <input class="usa-checkbox__input {{ include.input_classes }}" id="{{ include.id }}" type="checkbox" {% if include.checked %}checked{% endif %} name="{{ include.name }}" value="{{ include.label_text }}">
+  <label class="usa-checkbox__label {{ include.label_classes }}" for="{{ include.id }}">{{ include.label_text }}</label>
+</div>
