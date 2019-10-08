@@ -161,7 +161,7 @@ By default, all fields are required.
 
 ```html
 {% include form-fields/_text-field.html
-  id="buyer_first_name"                      //Needs to use underscores. Maps to name and id attributes. Required
+  id="first_name"                            //Needs to use underscores. Maps to name and id attributes. Required.
   label_text="Form label"                    //This is the label text. Required
   label_classes="class1 class2"              //Adds class names to the label
   optional="true"                            //Only accepts "true", makes form field optional
@@ -218,7 +218,10 @@ By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
 {% include form-fields/_date.html
   id="todays_date"                             //Needs to use underscores. Maps to name and id. The include will add "_month", "_day", and "_year" to the name and id. Required
   label_text="Today's date"                    //Changes the text in the legend element
-  hide="day"                                   //Currently only accepts "day" for MM/YYYY. Include can be updated for other fields.
+  hide="day"                                   //To exclude other fields. Accepts "day", "month, "year" or a combination such as "day month". Include can be updated for other fields.
+  prepopulate="session_storage_id"             //Used to add value of another key in session storage. Do not include "_month", "_day", and "_year" from the sessionStorage key.
+  min_year="YYYY"                              //Min year for validation. Example: "1900"
+  max_year="YYYY"                              //Max year for validation. Example: "2019"
 %}
 ```
 

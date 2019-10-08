@@ -1,20 +1,54 @@
 <fieldset class="usa-fieldset">
   <legend class="usa-legend">{% if include.label_text %}{{ include.label_text }}{%else%}Date of birth{% endif %}</legend>
-  <span class="usa-hint" id="{{include.id}}_dobHint">For example: 04 {% unless include.hide contains "day" %}28{%endunless%} 1986</span>
+  <span class="usa-hint" id="{{include.id}}_dobHint">For example: {% unless include.hide contains "month" %}04{% endunless %} {% unless include.hide contains "day" %}28{%endunless%} {% unless include.hide contains "year" %}1986{%endunless%}</span>
   <div class="usa-memorable-date">
+    {% unless include.hide contains "month" %}
     <div class="usa-form-group usa-form-group--month">
       <label class="usa-label margin-top-1" for="{{include.id}}_month">Month</label>
-      <input class="usa-input usa-input--inline" aria-describedby="{{include.id}}_dobHint" id="{{include.id}}_month" name="{{include.id}}_month" type="number" min="1" max="12" value="" pattern="[0-9]*">
+      <input
+        class="usa-input usa-input--inline"
+        aria-describedby="{{include.id}}_dobHint"
+        id="{{include.id}}_month"
+        name="{{include.id}}_month"
+        type="number"
+        min="1"
+        max="12"
+        pattern="[0-9]*"
+        {% if include.prepopulate %}data-print="{{ include.prepopulate }}_month"{% endif %}
+      >
     </div>
+    {% endunless %}
     {% unless include.hide contains "day" %}
     <div class="usa-form-group usa-form-group--day">
       <label class="usa-label margin-top-1" for="{{include.id}}_day">Day</label>
-      <input class="usa-input usa-input--inline" aria-describedby="{{include.id}}_dobHint" id="{{include.id}}_day" name="{{include.id}}_day" type="number" min="1" max="31" value="" pattern="[0-9]*">
+      <input
+        class="usa-input usa-input--inline"
+        aria-describedby="{{include.id}}_dobHint"
+        id="{{include.id}}_day"
+        name="{{include.id}}_day"
+        type="number"
+        min="1"
+        max="31"
+        pattern="[0-9]*"
+        {% if include.prepopulate %}data-print="{{ include.prepopulate }}_day"{% endif %}
+      >
     </div>
     {% endunless %}
+    {% unless include.hide contains "year" %}
     <div class="usa-form-group usa-form-group--year">
       <label class="usa-label margin-top-1" for="{{include.id}}_year">Year</label>
-      <input class="usa-input usa-input--inline" aria-describedby="{{include.id}}_dobHint" id="{{include.id}}_year" name="{{include.id}}_year" type="number" min="1900" max="2019" value="" pattern="[0-9]*">
+      <input
+        class="usa-input usa-input--inline"
+        aria-describedby="{{include.id}}_dobHint"
+        id="{{include.id}}_year"
+        name="{{include.id}}_year"
+        type="number"
+        {% if include.min_year %}min="{{ include.min_year }}"{% endif %}
+        {% if include.max_year %}max="{{ include.max_year }}"{% endif %} 
+        pattern="[0-9]*"
+        {% if include.prepopulate %}data-print="{{ include.prepopulate }}_year"{% endif %}
+      >
     </div>
+    {% endunless %}
   </div>
 </fieldset>
