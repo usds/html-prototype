@@ -155,6 +155,8 @@ This system works well with the URL parameters above.
 
 All form fields in the prototype are handled by Jekyll includes. Here are includes for the following types of inputs and the parameters they accept. Note: not all possible options have been built out, and only the needs of this specific prototype were addressed.
 
+All form fields are required to be filled out unless the optional parameter is passed into the include.
+
 #### Text (with a param, could be modified to be any basic text input)
 
 If fields are not indicated as required, they do not need to be included.
@@ -215,18 +217,6 @@ If fields are not indicated as required, they do not need to be included.
 %}
 ```
 
-#### Signature
-
-Signatures are always required
-
-```html
-{% include form-fields/_signature.html
-  id="buyer_signature"                         //Needs to use underscores. Maps to name and id attributes. Required
-  label_text="Buyer signature"                 //This is the label text. Required
-  label_classes="class1 class2"                //Adds class names to the label
-  input_classes="class1 class2"                //Adds class names to the input devices
-%}
-```
 #### Date
 
 By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
@@ -239,6 +229,7 @@ By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
   prepopulate="session_storage_id"             //Used to add value of another key in session storage. Do not include "_month", "_day", and "_year" from the sessionStorage key.
   min_year="YYYY"                              //Min year for validation. Example: "1900"
   max_year="YYYY"                              //Max year for validation. Example: "2019"
+  optional="true"                              //Only accepts "true", makes form field optional
 %}
 ```
 

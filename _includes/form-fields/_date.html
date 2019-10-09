@@ -1,5 +1,9 @@
 <fieldset class="usa-fieldset">
-  <legend class="usa-legend">{% if include.label_text %}{{ include.label_text }}{%else%}Date of birth{% endif %}</legend>
+  <legend class="usa-legend">{% if include.label_text %}{{ include.label_text }}{%else%}Date of birth{% endif %}
+    {% if include.optional == "true" %}
+      <span class="usa-hint">(optional)</span>
+    {% endif %}
+</legend>
   <span class="usa-hint" id="{{include.id}}_dobHint">For example: {% unless include.hide contains "month" %}04{% endunless %} {% unless include.hide contains "day" %}28{%endunless%} {% unless include.hide contains "year" %}1986{%endunless%}</span>
   <div class="usa-memorable-date">
     {% unless include.hide contains "month" %}
@@ -15,6 +19,7 @@
         max="12"
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_month"{% endif %}
+        {% unless include.optional %}required{% endunless%}
       >
     </div>
     {% endunless %}
@@ -31,6 +36,7 @@
         max="31"
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_day"{% endif %}
+        {% unless include.optional %}required{% endunless%}
       >
     </div>
     {% endunless %}
@@ -44,9 +50,10 @@
         name="{{include.id}}_year"
         type="number"
         {% if include.min_year %}min="{{ include.min_year }}"{% endif %}
-        {% if include.max_year %}max="{{ include.max_year }}"{% endif %} 
+        {% if include.max_year %}max="{{ include.max_year }}"{% endif %}
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_year"{% endif %}
+        {% unless include.optional %}required{% endunless%}
       >
     </div>
     {% endunless %}
