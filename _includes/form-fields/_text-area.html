@@ -1,0 +1,23 @@
+<label
+  class="usa-label {{ include.label_classes }}"
+  for="{{ include.id }}"
+  aria-describedby="{{ include.id }}_hint">
+    {{ include.label_text }}
+    {% if include.optional == "true" %}
+      <span class="usa-hint">(optional)</span>
+    {% endif %}
+</label>
+{% if include.hint %}
+<span
+  class="usa-hint"
+  id="{{ include.id }}_hint">
+    {{ include.hint }}
+</span>
+{% endif %}
+<textarea
+  class="usa-input {{ include.input_classes }}"
+  id="{{ include.id }}"
+  {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
+  name="{{ include.id }}"
+  {% unless include.optional %}required{% endunless%}
+></textarea>

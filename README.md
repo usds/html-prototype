@@ -157,7 +157,25 @@ All form fields in the prototype are handled by Jekyll includes. Here are includ
 
 #### Text (with a param, could be modified to be any basic text input)
 
-By default, all fields are required.
+If fields are not indicated as required, they do not need to be included.
+
+```html
+{% include form-fields/_text-field.html
+  id="first_name"                            //Needs to use underscores. Maps to name and id attributes. Required.
+  label_text="Form label"                    //This is the label text. Required
+  label_classes="class1 class2"              //Adds class names to the label
+  optional="true"                            //Only accepts "true", makes form field optional
+  hint="This is some hint text"              //Hint text under the label
+  type="text"                                //Any HTML5 input type. Default is "text"
+  input_classes="class1 class2"              //Adds class names to the input
+  prepopulate="session_storage_id"           //Used to add value of a key in session storage
+  tel_keyboard="true"                        //Only accepts "true". Uses telephone keyboard on mobile devices
+%}
+```
+
+#### Textarea
+
+If fields are not indicated as required, they do not need to be included.
 
 ```html
 {% include form-fields/_text-field.html
@@ -168,7 +186,6 @@ By default, all fields are required.
   hint="This is some hint text"              //Hint text under the label
   input_classes="class1 class2"              //Adds class names to the input
   prepopulate="session_storage_id"           //Used to add value of a key in session storage
-  tel_keyboard="true"                        //Only accepts "true". Uses telephone keyboard on mobile devices
 %}
 ```
 
