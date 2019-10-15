@@ -130,12 +130,9 @@ Form data can be printed in either inputs or HTML elements using the `data-print
 
 If you were persisting data in a form, you can add the `data-print` attribute to an input. The ID doesn't have to match:
 
-```htom
+```html
 <input id="first_name" name="first_name" type="text" data-print="first_name">
 ```
-
-[This is work in progress. See review.html for all currently available printing options. ]
-
 
 
 ## URL Parameters
@@ -193,58 +190,82 @@ If fields are not indicated as required, they do not need to be included.
 
 ```html
 {% include form-fields/_text-field.html
-  id="first_name"                            //Needs to use underscores. Maps to name and id attributes. Required.
-  label_text="Form label"                    //This is the label text. Required
-  label_classes="class1 class2"              //Adds class names to the label
-  optional="true"                            //Only accepts "true", makes form field optional
-  hint="This is some hint text"              //Hint text under the label
-  input_classes="class1 class2"              //Adds class names to the input
-  prepopulate="session_storage_id"           //Used to add value of a key in session storage
+  id="first_name"
+  label_text="Form label"
 %}
 ```
+
+#### Required parameters
+- `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
+- `label_text="Foo bar"`: This is the label text.
+
+#### Optional Parameters
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
+- `hint="This is some hint text"`: Hint text under the label
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
 
 ### Checkbox
 
 ```html
 {% include form-fields/_text-field.html
-  name="checkbox_group"                      //Maps to name attribute. Required
-  id="checkbox_1"                            //Needs to use underscores. Maps to id attribute. Required
-  label_text="This is checkbox 1"            //This is the label text. Required
-  label_classes="class1 class2"              //Adds class names to the label
-  input_classes="class1 class2"              //Adds class names to the input
-  checked="true"                             //Only accepts "true". Loads page with checkbox cheked.
+  name="checkbox_group"                      
+  id="checkbox_1"
+  label_text="This is checkbox 1"
 %}
 ```
+
+#### Required parameters
+- `name="checkbox_group"`: Maps to name attribute that all checkboxes in a set share
+- `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
+- `label_text="Foo bar"`: This is the label text.
+
+#### Optional Parameters
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `checked="true"`: Only accepts "true". Loads page with checkbox checked.
 
 ### Radio
 
 ```html
 {% include form-fields/_radio.html
-  name="radio_group"                         //Maps to name attribute. Required
-  id="radio_1"                               //Needs to use underscores. Maps to id attribute. Required
-  label_text="This is radio 1"               //This is the label text. Required
-  label_classes="class1 class2"              //Adds class names to the label
-  input_classes="class1 class2"              //Adds class names to the input
-  checked="true"                             //Only accepts "true". Loads page with checkbox cheked.
+  name="radio_group"
+  id="radio_1"
+  label_text="This is radio 1"
 %}
 ```
+
+#### Required parameters
+- `name="radio_group"`: Maps to name attribute that all radio options in a set share
+- `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
+- `label_text="Foo bar"`: This is the label text.
+
+#### Optional Parameters
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `checked="true"`: Only accepts "true". Loads page with radio selected.
 
 ### Date
 
-By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
+By default, dates are MM/DD/YYYY, which are entered in three separate fields.
 
 ```html
 {% include form-fields/_date.html
-  id="todays_date"                             //Needs to use underscores. Maps to name and id. The include will add "_month", "_day", and "_year" to the name and id. Required
-  label_text="Today's date"                    //Changes the text in the legend element
-  hide="day"                                   //To exclude other fields. Accepts "day", "month, "year" or a combination such as "day month". Include can be updated for other fields.
-  prepopulate="session_storage_id"             //Used to add value of another key in session storage. Do not include "_month", "_day", and "_year" from the sessionStorage key.
-  min_year="YYYY"                              //Min year for validation. Example: "1900"
-  max_year="YYYY"                              //Max year for validation. Example: "2019"
-  optional="true"                              //Only accepts "true", makes form field optional
+  id="todays_date"
 %}
 ```
 
+#### Required parameters
+- `id="some_date"`: Needs to use underscores. Maps to name and id. The include will add `_month`, `_day`, and `_year` to the `name` and `id`.
+
+#### Optional Parameters
+- `label_text="Enter date"`: Changes the text in the legend element. The default legend text id Date of Birth
+- `hide="day"`: To exclude other fields. Accepts "day", "month, "year" or a combination such as "day month". Include can be updated for other fields.
+-  `prepopulate="session_storage_id"`: Used to add value of another key in session storage. Do not include `_month`, `_day`, and `_year` from the sessionStorage key.
+- `min_year="YYYY"`: Min year for validation. Example: "1900"
+- `max_year`: Max year for validation. Example: "2019"
+- `optional="true"`: Only accepts "true", makes form field optional instead of required
 
 ### List of states
 
@@ -252,11 +273,16 @@ Select box with all US states
 
 ```html
 {% include form-fields/_state-select.html
-  id="buyer_state"                           //Needs to use underscores. Maps to name and id attributes. Required
-  label_text="Form label"                    //This is the label text. Otherwise will be "State"
-  label_classes="class1 class2"              //Adds class names to the label
-  optional="true"                            //Only accepts "true", makes form field optional
-  input_classes="class1 class2"              //Adds class names to the input
-  prepopulate="session_storage_id"           //Used to add value of a key in session storage devices
+  id="some_state"
 %}
 ```
+
+#### Required parameters
+- `id="some_state"`: Needs to use underscores. Maps to `name` and `id` attributes
+
+#### Optional Parameters
+- `label_text="Form label"`: This is the label text. Otherwise will be "State"
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `prepopulate="session_storage_id"`: Pre-selects an option with data from a `sessionStorage` key, which would usually be the `id` of another field.
