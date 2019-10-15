@@ -3,22 +3,8 @@ layout: default
 ---
 
 
-{% include form-fields/_radio.html
-  name="radio_group"
-  id="radio_1"
-  label_text="This is radio 1"
-  follow_up="followup"
-%}
+<form class="" method="post">
 
-<div id="followup" class="usa-form-followup" hidden>
-  {% include form-fields/_text-field.html
-    id="first_name"
-    label_text="Form label"
-  %}
-</div>
+<button type="submit" class="usa-button">Submit</button>
 
-{% include form-fields/_radio.html
-  name="radio_group"
-  id="radio_2"
-  label_text="This is radio 2"
-%}
+</form>

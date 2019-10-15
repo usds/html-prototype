@@ -3,7 +3,7 @@
 
 {% include _head.html %}
 
-<body>
+<body class="bg-primary-lighter">
 
   <a class="usa-skipnav" href="#main-content">Skip to main content</a>
 
@@ -54,7 +54,16 @@
 
 
 <main id="main">
-  {{ content }}
+
+  <div class="grid-container">
+  <div class="grid-row margin-y-7">
+    <div class="tablet:grid-col-9 margin-x-auto">
+      <div class="bg-white border-1px padding-2">
+        {{ content }}
+      </div>
+    </div>
+</div>
+
 </main>
 
 
