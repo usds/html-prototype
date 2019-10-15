@@ -32,9 +32,7 @@ This will will update some of the scss files in `./assets/uswds-sass`, but will 
 1. Install the package `npm install --save-dev *new-USWDS-version-number*`
 2. Run `gulp update`
 3. Compile usds.css `gulp uswds-build-sass`
-4. Run Jekyll `bundle exe
-
----
+4. Run Jekyll `bundle exec jekyll serve`
 
 ## How the prototype scripting works
 
@@ -88,9 +86,9 @@ Then in the `<script>` at the bottom you can do:
 </script>
 ```
 
----
 
-### Follow-up questions
+
+## Follow-up questions
 In some forms, you may want to ask an inline follow-up if a user selects a specific answer. This is enabled on radios, select boxes, and checkboxes using a mix of `data` attributes and `id` attributes.
 
 On the form element that triggers a follow-up, use the `data-followup` attribute with a value that corresponds to the `id` of element you wish toggle on and off. The follow-up can appear in any part of the DOM and can include any type of content. For accessibility, also use `aria-controls` and `aria-expanded` attributes.
@@ -104,7 +102,7 @@ On the form element that triggers a follow-up, use the `data-followup` attribute
 </div>
 ```
 
-#### Select Boxes
+### Select Boxes
 For Select boxes, put the `data-followup` on the `<option>`.
 
 ```html
@@ -120,9 +118,9 @@ For Select boxes, put the `data-followup` on the `<option>`.
 </div>
 ```
 
----
 
-### Printing Form Data
+
+## Printing Form Data
 
 Form data can be printed in either inputs or HTML elements using the `data-print` attribute. The value of that attribute should equal the ID of the corresponding input. So, if we wanted to greet Bob on his page, we would write:
 
@@ -138,12 +136,12 @@ If you were persisting data in a form, you can add the `data-print` attribute to
 
 [This is work in progress. See review.html for all currently available printing options. ]
 
----
 
-### URL Parameters
+
+## URL Parameters
 Any page loaded with a URL parameter or parameters will be stored as key/value pairs in `sessionStorage`. For example, when you visit a page as `http://site.com?foo=bar`, your sessionStorage will be updated with `foo: "bar"` to use later.
 
-### Filtering Content on the page
+## Filtering Content on the page
 Filtering content will allow you to handle multiple states on a single page. For example, let's say you have a page that would show some content that is conditional upon some stored data. You can use the data attribute `data-filter-[STORED_ID]="[STORED_ID_VALUE]"` to keep it on the page. If the `STORED_ID_VALUE` attribute does not match what is in your session data, the element will be removed from the DOM.
 
 If filtering content, **use underscores as separators, note hyphens**
@@ -156,15 +154,14 @@ If filtering content, **use underscores as separators, note hyphens**
 <div data-filter-foo="bar baz"> // Element stays on page
 ```
 
----
 
-### Using Jekyll includes for the form fields
+## Using Jekyll includes for the form fields
 
 All form fields in the prototype are handled by Jekyll includes. Here are includes for the following types of input includes and the parameters they accept.
 
 All form fields are required by default unless the optional parameter is passed into the include.
 
-#### Text (with a param, could be modified to be any basic text input)
+### Text (with a param, could be modified to be any basic text input)
 
 If fields are not indicated as required, they do not need to be included.
 
@@ -175,12 +172,12 @@ If fields are not indicated as required, they do not need to be included.
 %}
 ```
 
-##### Required parameters
+#### Required parameters
 
 - `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
 - `label_text="Foo bar"`: This is the label text.
 
-##### Optional Parameters
+#### Optional Parameters
 
 - `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
 - `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
@@ -190,7 +187,7 @@ If fields are not indicated as required, they do not need to be included.
 - `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
 - `tel_keyboard="true"`: Only accepts "true". Uses big numeric telephone keyboard on mobile devices.
 
-#### Textarea
+### Textarea
 
 If fields are not indicated as required, they do not need to be included.
 
@@ -206,7 +203,7 @@ If fields are not indicated as required, they do not need to be included.
 %}
 ```
 
-#### Checkbox
+### Checkbox
 
 ```html
 {% include form-fields/_text-field.html
@@ -219,7 +216,7 @@ If fields are not indicated as required, they do not need to be included.
 %}
 ```
 
-#### Radio
+### Radio
 
 ```html
 {% include form-fields/_radio.html
@@ -232,7 +229,7 @@ If fields are not indicated as required, they do not need to be included.
 %}
 ```
 
-#### Date
+### Date
 
 By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
 
@@ -249,7 +246,7 @@ By default, dates are MM/DD/YYYY. The default legend text id Date of Birth
 ```
 
 
-#### List of states
+### List of states
 
 Select box with all US states
 
