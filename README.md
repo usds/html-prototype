@@ -219,12 +219,14 @@ If fields are not indicated as required, they do not need to be included.
 #### Required parameters
 - `name="checkbox_group"`: Maps to name attribute that all checkboxes in a set share
 - `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
-- `label_text="Foo bar"`: This is the label text.
+- `label_text="Foo bar"`: This sets the label text and `value` property of the input.
 
 #### Optional Parameters
 - `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
 - `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
 - `checked="true"`: Only accepts "true". Loads page with checkbox checked.
+- `prepopulate="session_storage_id"`: Sets the checkedbox as `checked` if the sessionStorage key matches the value of the input.
+- `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 
 ### Radio
 
@@ -239,12 +241,14 @@ If fields are not indicated as required, they do not need to be included.
 #### Required parameters
 - `name="radio_group"`: Maps to name attribute that all radio options in a set share
 - `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
-- `label_text="Foo bar"`: This is the label text.
+- `label_text="Foo bar"`: This sets the label text and `value` property of the input.
 
 #### Optional Parameters
 - `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
 - `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
 - `checked="true"`: Only accepts "true". Loads page with radio selected.
+- `prepopulate="session_storage_id"`: Sets the radio as `checked` if the sessionStorage key matches the value of the input.
+- `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 
 ### Date
 

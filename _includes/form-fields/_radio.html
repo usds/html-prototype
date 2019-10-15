@@ -1,4 +1,12 @@
 <div class="usa-radio">
-  <input class="usa-radio__input {{ include.input_classes }}" id="{{ include.id }}" type="radio" {% if include.checked %}checked{% endif %} name="{{ include.name }}" value="{{ include.label_text }}">
+  <input
+    class="usa-radio__input {{ include.input_classes }}"
+    id="{{ include.id }}"
+    type="radio"
+    {% if include.checked %}checked{% endif %}
+    name="{{ include.name }}"
+    value="{% if include.input_value %}{{ include.input_value }}{% else %}{{ include.label_text }}{% endif %}"
+    {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
+  >
   <label class="usa-radio__label {{ include.label_classes }}" for="{{ include.id }}">{{ include.label_text }}</label>
 </div>
