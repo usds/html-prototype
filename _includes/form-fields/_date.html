@@ -20,6 +20,7 @@
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_month"{% endif %}
         {% unless include.optional %}required{% endunless%}
+        {% if include.disabled %}disabled{% endif %}
       >
     </div>
     {% endunless %}
@@ -37,6 +38,7 @@
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_day"{% endif %}
         {% unless include.optional %}required{% endunless%}
+        {% if include.disabled %}disabled{% endif %}
       >
     </div>
     {% endunless %}
@@ -54,6 +56,7 @@
         pattern="[0-9]*"
         {% if include.prepopulate %}data-print="{{ include.prepopulate }}_year"{% endif %}
         {% unless include.optional %}required{% endunless%}
+        {% if include.disabled %}disabled{% endif %}
       >
     </div>
     {% endunless %}

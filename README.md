@@ -230,6 +230,7 @@ If fields are not indicated as required, they do not need to be included.
 - `prepopulate="session_storage_id"`: Sets the checkedbox as `checked` if the sessionStorage key matches the value of the input.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 - `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
 
 ### Radio
 
@@ -253,6 +254,7 @@ If fields are not indicated as required, they do not need to be included.
 - `prepopulate="session_storage_id"`: Sets the radio as `checked` if the sessionStorage key matches the value of the input.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 - `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
 
 ### Date
 
@@ -274,6 +276,7 @@ By default, dates are MM/DD/YYYY, which are entered in three separate fields.
 - `min_year="YYYY"`: Min year for validation. Example: "1900"
 - `max_year`: Max year for validation. Example: "2019"
 - `optional="true"`: Only accepts "true", makes form field optional instead of required
+- `disabled="true"`: Only accepts true. Disables all fields. Use mainly when include is inside a followup.
 
 ### List of states
 
@@ -294,3 +297,4 @@ Select box with all US states
 - `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
 - `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
 - `prepopulate="session_storage_id"`: Pre-selects an option with data from a `sessionStorage` key, which would usually be the `id` of another field.
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.

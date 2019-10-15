@@ -4,6 +4,7 @@
   class="usa-select width-auto {{ include.select_classes }}"
   {% unless include.optional %}required{% endunless%}
   {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
+  {% if include.disabled %}disabled{% endif %}
 >
   <option>---</option>
   <option value="Alabama">Alabama</option>
