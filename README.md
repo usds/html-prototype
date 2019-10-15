@@ -153,9 +153,9 @@ This system works well with the URL parameters above.
 
 ### Using Jekyll includes for the form fields
 
-All form fields in the prototype are handled by Jekyll includes. Here are includes for the following types of inputs and the parameters they accept. Note: not all possible options have been built out, and only the needs of this specific prototype were addressed.
+All form fields in the prototype are handled by Jekyll includes. Here are includes for the following types of input includes and the parameters they accept.
 
-All form fields are required to be filled out unless the optional parameter is passed into the include.
+All form fields are required by default unless the optional parameter is passed into the include.
 
 #### Text (with a param, could be modified to be any basic text input)
 
@@ -163,17 +163,25 @@ If fields are not indicated as required, they do not need to be included.
 
 ```html
 {% include form-fields/_text-field.html
-  id="first_name"                            //Needs to use underscores. Maps to name and id attributes. Required.
-  label_text="Form label"                    //This is the label text. Required
-  label_classes="class1 class2"              //Adds class names to the label
-  optional="true"                            //Only accepts "true", makes form field optional
-  hint="This is some hint text"              //Hint text under the label
-  type="text"                                //Any HTML5 input type. Default is "text"
-  input_classes="class1 class2"              //Adds class names to the input
-  prepopulate="session_storage_id"           //Used to add value of a key in session storage
-  tel_keyboard="true"                        //Only accepts "true". Uses telephone keyboard on mobile devices
+  id="first_name"                            
+  label_text="Form label"                    
 %}
 ```
+
+##### Required parameters
+
+- `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
+- `label_text="Foo bar"`: This is the label text.
+
+##### Optional Parameters
+
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
+- `hint="This is some hint text"`: Hint text under the label
+- `type="email"`: Can be any HTML5 input type (sample displays email). By default, inputs are `type="text"`.
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
+- `tel_keyboard="true"`: Only accepts "true". Uses big numeric telephone keyboard on mobile devices.
 
 #### Textarea
 
