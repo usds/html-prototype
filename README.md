@@ -190,7 +190,7 @@ If fields are not indicated as required, they do not need to be included.
 If fields are not indicated as required, they do not need to be included.
 
 ```html
-{% include form-fields/_text-field.html
+{% include form-fields/_text-area.html
   id="first_name"
   label_text="Form label"
 %}
