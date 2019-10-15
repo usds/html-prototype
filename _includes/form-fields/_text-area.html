@@ -20,4 +20,5 @@
   {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
   name="{{ include.id }}"
   {% unless include.optional %}required{% endunless%}
+  {% if include.disabled %}disabled{% endif %}
 ></textarea>

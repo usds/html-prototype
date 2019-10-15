@@ -7,4 +7,18 @@ layout: default
   name="radio_group"
   id="radio_1"
   label_text="This is radio 1"
+  follow_up="followup"
+%}
+
+<div id="followup" class="usa-form-followup" hidden>
+  {% include form-fields/_text-field.html
+    id="first_name"
+    label_text="Form label"
+  %}
+</div>
+
+{% include form-fields/_radio.html
+  name="radio_group"
+  id="radio_2"
+  label_text="This is radio 2"
 %}

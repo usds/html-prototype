@@ -183,6 +183,7 @@ If fields are not indicated as required, they do not need to be included.
 - `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
 - `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
 - `tel_keyboard="true"`: Only accepts "true". Uses big numeric telephone keyboard on mobile devices.
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
 
 ### Textarea
 
@@ -205,6 +206,7 @@ If fields are not indicated as required, they do not need to be included.
 - `hint="This is some hint text"`: Hint text under the label
 - `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
 - `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
 
 ### Checkbox
 
@@ -227,6 +229,7 @@ If fields are not indicated as required, they do not need to be included.
 - `checked="true"`: Only accepts "true". Loads page with checkbox checked.
 - `prepopulate="session_storage_id"`: Sets the checkedbox as `checked` if the sessionStorage key matches the value of the input.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
+- `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
 
 ### Radio
 
@@ -249,6 +252,7 @@ If fields are not indicated as required, they do not need to be included.
 - `checked="true"`: Only accepts "true". Loads page with radio selected.
 - `prepopulate="session_storage_id"`: Sets the radio as `checked` if the sessionStorage key matches the value of the input.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
+- `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
 
 ### Date
 

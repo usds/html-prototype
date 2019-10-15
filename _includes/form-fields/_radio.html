@@ -7,6 +7,7 @@
     name="{{ include.name }}"
     value="{% if include.input_value %}{{ include.input_value }}{% else %}{{ include.label_text }}{% endif %}"
     {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
+    {% if include.follow_up %}data-followup="{{ include.follow_up }}" aria-controls="{{ include.follow_up }}" aria-expanded="false"{% endif %}
   >
   <label class="usa-radio__label {{ include.label_classes }}" for="{{ include.id }}">{{ include.label_text }}</label>
 </div>

@@ -12,5 +12,6 @@
 - {% include_relative prototype/filter-content.js %}
 - {% include_relative prototype/url-params.js %}
 - {% include_relative prototype/validation.js %}
+- {% include_relative prototype/follow-ups.js %}
 
 - {% include_relative init.js %}
