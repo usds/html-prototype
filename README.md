@@ -34,6 +34,7 @@ This will will update some of the scss files in `./assets/uswds-sass`, but will 
 3. Compile usds.css `gulp uswds-build-sass`
 4. Run Jekyll `bundle exe
 
+---
 
 ## How the prototype scripting works
 
@@ -87,6 +88,8 @@ Then in the `<script>` at the bottom you can do:
 </script>
 ```
 
+---
+
 ### Follow-up questions
 In some forms, you may want to ask an inline follow-up if a user selects a specific answer. This is enabled on radios, select boxes, and checkboxes using a mix of `data` attributes and `id` attributes.
 
@@ -117,6 +120,8 @@ For Select boxes, put the `data-followup` on the `<option>`.
 </div>
 ```
 
+---
+
 ### Printing Form Data
 
 Form data can be printed in either inputs or HTML elements using the `data-print` attribute. The value of that attribute should equal the ID of the corresponding input. So, if we wanted to greet Bob on his page, we would write:
@@ -132,6 +137,8 @@ If you were persisting data in a form, you can add the `data-print` attribute to
 ```
 
 [This is work in progress. See review.html for all currently available printing options. ]
+
+---
 
 ### URL Parameters
 Any page loaded with a URL parameter or parameters will be stored as key/value pairs in `sessionStorage`. For example, when you visit a page as `http://site.com?foo=bar`, your sessionStorage will be updated with `foo: "bar"` to use later.
@@ -149,7 +156,7 @@ If filtering content, **use underscores as separators, note hyphens**
 <div data-filter-foo="bar baz"> // Element stays on page
 ```
 
-This system works well with the URL parameters above.
+---
 
 ### Using Jekyll includes for the form fields
 
