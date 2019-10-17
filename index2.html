@@ -29,17 +29,40 @@ layout: default
   prepopulate="last_name"
 %}
 
+<div class="margin-y-5">
+
 {% include form-fields/_radio.html
   name="radio_group"
   id="radio_1"
-  label_text="This is radio 1"
+  label_text="Option without a follow up"
   prepopulate="radio_group"
 %}
 
 {% include form-fields/_radio.html
   name="radio_group"
   id="radio_2"
-  label_text="This is radio 2"
-  follow_up="followup1"
+  label_text="Option with a follow up"
   prepopulate="radio_group"
 %}
+
+</div>
+
+<div class="margin-y-5">
+
+  {% include form-fields/_checkbox.html
+    name="checkbox_group"
+    id="checkbox_1"
+    label_text="Checkbox without a follow up"
+    prepopulate="checkbox_1"
+  %}
+
+  {% include form-fields/_checkbox.html
+    name="checkbox_group"
+    id="checkbox_2"
+    label_text="Checkbox with a required followup"
+    follow_up="followup2"
+    follow_up_optional="true"
+    prepopulate="checkbox_2"
+  %}
+
+</div>
