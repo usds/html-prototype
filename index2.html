@@ -9,8 +9,11 @@ layout: default
 <p><strong>Radio selection:</strong> <span data-print="radio_group"></span></p>
 <p><strong>Radio follow-up answer:</strong> <span data-print="specify"></span></p>
 <p><strong>Checkbox selection(s):</strong> <span data-print="checkbox_group"></span></p>
-
 <p><strong>Checkbox followup:</strong> <span data-print="specify2"></span></p>
+<p><strong>State:</strong> <span data-print="some_state"></span></p>
+
+<h4>Your text</h4>
+<div data-print="textarea"></div>
 
 <hr>
 
@@ -63,6 +66,25 @@ layout: default
     follow_up="followup2"
     follow_up_optional="true"
     prepopulate="checkbox_2"
+  %}
+
+</div>
+
+<div class="margin-y-5">
+
+  {% include form-fields/_state-select.html
+    id="some_state"
+    prepopulate="some_state"
+  %}
+
+</div>
+
+<div class="margin-y-5">
+
+  {% include form-fields/_text-area.html
+    id="textarea"
+    label_text="Write something"
+    prepopulate="textarea"
   %}
 
 </div>

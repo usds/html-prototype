@@ -77,6 +77,26 @@ layout: default
 
   </fieldset>
 
+  <fieldset class="usa-fieldset margin-top-5">
+    <legend class="usa-legend">Select boxes</legend>
+
+    {% include form-fields/_state-select.html
+      id="some_state"
+    %}
+  </fieldset>
+
+  <fieldset class="usa-fieldset margin-top-5">
+    <legend class="usa-legend">Text area</legend>
+
+
+  {% include form-fields/_text-area.html
+    id="textarea"
+    label_text="Write something"
+    hint="Anything"
+    optional="true"
+  %}
+  </fieldset>
+
 
   <div class="margin-top-5">
     <button type="submit" name="button" class="usa-button">Submit</button>
