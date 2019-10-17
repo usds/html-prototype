@@ -49,6 +49,35 @@ layout: default
   </fieldset>
 
 
+  <fieldset class="usa-fieldset margin-top-5">
+    <legend class="usa-legend">Checkbox</legend>
+
+    {% include form-fields/_checkbox.html
+      name="checkbox_group"
+      id="checkbox_1"
+      label_text="Checkbox without a follow up"
+    %}
+
+    {% include form-fields/_checkbox.html
+      name="checkbox_group"
+      id="checkbox_2"
+      label_text="Checkbox with a required followup"
+      follow_up="followup2"
+      follow_up_optional="true"
+    %}
+
+    <div class="usa-form-followup" id="followup2" hidden>
+      {% include form-fields/_text-field.html
+        id="specify2"
+        label_text="Specify"
+        disabled="true"
+      %}
+
+    </div>
+
+  </fieldset>
+
+
   <div class="margin-top-5">
     <button type="submit" name="button" class="usa-button">Submit</button>
   </div>
