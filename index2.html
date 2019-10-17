@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<h2>Examples of text<h2>
+
+<p data-print="first_name"></p>
+<p data-print="last_name"></p>
+<p data-print="radio_group"></p>
+<p data-print="specify"></p>
+
+<hr>
+
+<h2>Examples of inputs</h2>
+
+{% include form-fields/_text-field.html
+  id="first_name"
+  label_text="First name"
+  hint="This is what people call you"
+  prepopulate="first_name"
+%}
+
+{% include form-fields/_text-field.html
+  id="last_name"
+  label_text="Last name"
+  prepopulate="last_name"
+%}
+
+{% include form-fields/_radio.html
+  name="radio_group"
+  id="radio_1"
+  label_text="This is radio 1"
+  prepopulate="radio_group"
+%}
+
+{% include form-fields/_radio.html
+  name="radio_group"
+  id="radio_2"
+  label_text="This is radio 2"
+  follow_up="followup1"
+  prepopulate="radio_group"
+%}

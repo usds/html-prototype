@@ -1,3 +1,73 @@
 ---
 layout: default
 ---
+
+
+<h1>Sample form</h1>
+
+<form class="">
+
+
+  {% include form-fields/_text-field.html
+    id="first_name"
+    label_text="First name"
+    hint="This is what people call you"
+  %}
+
+  {% include form-fields/_text-field.html
+    id="last_name"
+    label_text="Last name"
+  %}
+
+  <fieldset class="usa-fieldset margin-top-5">
+    <legend class="usa-legend">Radios</legend>
+
+    {% include form-fields/_radio.html
+      name="radio_group"
+      id="radio_1"
+      label_text="Option without a follow up"
+    %}
+
+    {% include form-fields/_radio.html
+      name="radio_group"
+      id="radio_2"
+      label_text="Option with a followup"
+      follow_up="followup1"
+      follow_up_optional="true"
+    %}
+
+    <div class="usa-form-followup" id="followup1" hidden>
+      {% include form-fields/_text-field.html
+        id="specify"
+        label_text="Specify"
+        disabled="true"
+        optional="true"
+      %}
+
+    </div>
+
+  </fieldset>
+
+
+  <div class="margin-top-5">
+    <button type="submit" name="button" class="usa-button">Submit</button>
+  </div>
+
+</form>
+
+
+<script>
+  $(document).ready(function() {
+    $('form').on('submit', function() {
+      if (!checkValidityIfSupported($('form').get(0))) {
+        return false;
+      }
+      else {
+        updateStoredData();
+
+        nextPage("index2.html");
+        return false;
+      }
+    });
+  });
+</script>

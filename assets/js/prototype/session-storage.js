@@ -94,7 +94,7 @@ $(document).ready(function() {
           }
         }
         else {
-          if (printed_text != "[object HTMLInputElement]") {
+          if ((printed_text != "[object HTMLInputElement]") && ($(this).attr("type") != "radio")) {
             $(this).attr('data-print', placeholder_key).val(printed_text);
           }
         }
