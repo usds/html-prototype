@@ -19,6 +19,13 @@ layout: default
     label_text="Last name"
   %}
 
+  {% include form-fields/_text-field.html
+    id="favorite_food"
+    label_text="Favorite food"
+    disabled="true"
+    input_value="burgers"
+  %}
+
   <fieldset class="usa-fieldset margin-top-5">
     <legend class="usa-legend">Radios</legend>
 

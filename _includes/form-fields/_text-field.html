@@ -15,7 +15,7 @@
 </span>
 {% endif %}
 <input
-  class="usa-input {{ include.input_classes }}"
+  class="usa-input {{ include.input_classes }} {% if include.input_value %}usa-input--disabled{% endif %}"
   id="{{ include.id }}"
   {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
   name="{{ include.id }}"
@@ -24,4 +24,5 @@
   {% if include.tel_keyboard %}inputmode="numeric" pattern="[0-9]*"{% endif %}
   {% if include.follow_up %}data-followup="{{ include.follow_up }}" aria-controls="{{ include.follow_up }}" aria-expanded="false"{% endif %}
   {% if include.disabled %}disabled{% endif %}
+  {% if include.input_value %}value="{{ include.input_value }}"{% endif %}
 >

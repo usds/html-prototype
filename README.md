@@ -184,6 +184,7 @@ If fields are not indicated as required, they do not need to be included.
 - `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
 - `tel_keyboard="true"`: Only accepts "true". Uses big numeric telephone keyboard on mobile devices.
 - `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
+- `input_value="Custom input value"`: Loads input with custom `value` for the input.
 
 ### Textarea
 

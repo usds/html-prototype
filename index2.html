@@ -6,6 +6,7 @@ layout: default
 
 <p><strong>First name:</strong> <span data-print="first_name"></span></p>
 <p><strong>Last name:</strong> <span data-print="last_name"></span></p>
+<p><strong>Favorite food:</strong> <span data-print="favorite_food"></span></p>
 <p><strong>Radio selection:</strong> <span data-print="radio_group"></span></p>
 <p><strong>Radio follow-up answer:</strong> <span data-print="specify"></span></p>
 <p><strong>Checkbox selection(s):</strong> <span data-print="checkbox_group"></span></p>
@@ -16,6 +17,14 @@ layout: default
 <div data-print="textarea"></div>
 
 <hr>
+
+<h2>Filters</h2>
+
+<div class="usa-alert usa-alert--info" data-filter-favorite_food="burgers">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text">This appears because your favorite food is set to burgers. You can use URL parameters to save session storage. Reload this page by going to <a href="index2.html?favorite_food=Pizza">index2.html?favorite_food=Pizza</a> and see that your favorite food has been changed to Pizza</p>
+  </div>
+</div>
 
 <h2>Examples of inputs</h2>
 
