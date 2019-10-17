@@ -256,6 +256,7 @@ If fields are not indicated as required, they do not need to be included.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 - `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
 - `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
+- - `optional="true"`: Only accepts "true", makes radio selection optional instead of required by removing the `required` attribute.
 
 ### Date
 

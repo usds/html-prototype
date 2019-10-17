@@ -4,10 +4,10 @@ $(document).ready(function(){
       $form = $('form'),
       $submit = $('button[type="submit"]'),
       errorClass = "contains-error",
-      labelErrorClass = "usa-input-error-label",
+      labelErrorClass = "usa-label--error",
       errorID = "error",
       $errorplaceholder = $('.error-placeholder'),
-      errorContainer = ('<div class="usa-input-error"></div>');
+      errorContainer = ('<div id="error" class="usa-form-group--error"></div>');
 
 
   var displayErrors = function($el) {
@@ -15,11 +15,12 @@ $(document).ready(function(){
     var errorMessage = $el.attr('data-custom-validity') || $el[0].validationMessage,
       errorFieldName = $el.attr('id'),
       $label = $('label[for="'+errorFieldName+'"]'),
-      $container = $el.closest('.field-group');
+      $hint = $('.usa-hint[id="'+errorFieldName+'_hint"]'),
+      $container = $el.closest('.usa-fieldset');
 
     if (($el.attr("type") != "radio") && ($el.attr("type") != "checkbox")) {
-      var errorMessage = '<span id="error" aria-atomic="true" class="usa-input-error-message" role="alert">'+errorMessage+'</span>';
-      $el.add($label).wrapAll(errorContainer);
+      var errorMessage = '<span aria-atomic="true" class="usa-error-message" role="alert">'+errorMessage+'</span>';
+      $el.add($label).add($hint).wrapAll(errorContainer);
       $el.addClass(errorClass);
       $label.addClass(labelErrorClass);
       $el.next().remove('.form-feedback');
@@ -31,10 +32,10 @@ $(document).ready(function(){
       }
     }
     else if ($el.attr("type") == "checkbox") {
-      $el.before('<span aria-atomic="true" class="usa-input-error-message" role="alert">'+errorMessage+'</span>');
+      $el.before('<span aria-atomic="true" class="usa-error-message" role="alert">'+errorMessage+'</span>');
     }
     else {
-      $el.parent().parent().before('<span aria-atomic="true" class="usa-input-error-message" role="alert">'+errorMessage+'</span>');
+      $el.parent().before('<span aria-atomic="true" class="usa-error-message" role="alert">'+errorMessage+'</span>');
     }
     $el.focus();
     $container.attr('id',  errorID).addClass(errorClass);
@@ -43,10 +44,10 @@ $(document).ready(function(){
 
   var clearErrors = function($el) {
     $el.removeClass(errorClass);
-    $('.usa-input-error-message').remove();
+    $('.usa-error-message').remove();
     $('label.'+ labelErrorClass).removeClass(labelErrorClass);
     $('#error').removeClass(errorClass).removeAttr('id');
-    $('.usa-input-error').replaceWith(function() { return $(this).contents(); });
+    $('.usa-form-group--error').replaceWith(function() { return $(this).contents(); });
   };
 
   var checkValidations = function(event) {
@@ -68,5 +69,16 @@ $(document).ready(function(){
     });
   };
 
+  // checkValidity() will crash IE9, so we need to bypass it there.
+  var hasBrowserValidation = (typeof document.createElement('input').checkValidity == 'function');
+
+  if (hasBrowserValidation) {
+    $submit.on("click", checkValidations);
+    /*$inputs.on("keyup", function(){
+      if ($(this).val()){
+        clearErrors($(this));
+      }
+    });*/
+  }
 
 });
