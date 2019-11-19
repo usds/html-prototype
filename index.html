@@ -7,24 +7,27 @@ layout: default
 
 <form class="">
 
+  <fieldset class="usa-fieldset margin-top-5">
+    <legend class="usa-legend">Inputs</legend>
 
-  {% include form-fields/_text-field.html
-    id="first_name"
-    label_text="First name"
-    hint="This is what people call you"
-  %}
+    {% include form-fields/_text-field.html
+      id="first_name"
+      label_text="First name"
+      hint="This is what people call you"
+    %}
 
-  {% include form-fields/_text-field.html
-    id="last_name"
-    label_text="Last name"
-  %}
+    {% include form-fields/_text-field.html
+      id="last_name"
+      label_text="Last name"
+    %}
 
-  {% include form-fields/_text-field.html
-    id="favorite_food"
-    label_text="Favorite food"
-    disabled="true"
-    input_value="burgers"
-  %}
+    {% include form-fields/_text-field.html
+      id="favorite_food"
+      label_text="Favorite food"
+      disabled="true"
+      input_value="burgers"
+    %}
+  </fieldset>
 
   <fieldset class="usa-fieldset margin-top-5">
     <legend class="usa-legend">Radios</legend>
@@ -86,6 +89,30 @@ layout: default
 
   <fieldset class="usa-fieldset margin-top-5">
     <legend class="usa-legend">Select boxes</legend>
+
+    {% include form-fields/_select.html
+      id="basic_select"
+      label_text="Basic select box"
+      options=" | Option 1 | Option 2"
+    %}
+
+    {% include form-fields/_select.html
+      id="title"
+      label_text="Select box with followup"
+      options=" | Mr. | Mrs. | Ms. | Dr. | Other (Please specify)"
+      optional="true"
+      follow_up="followup_select"
+      follow_up_optional="true"
+      follow_up_option="Other (Please specify)"
+    %}
+
+    <div class="usa-form-followup" id="followup_select" hidden>
+      {% include form-fields/_text-field.html
+        id="specify_select"
+        label_text="Specify"
+        disabled="true"
+      %}
+    </div>
 
     {% include form-fields/_state-select.html
       id="some_state"

@@ -14,15 +14,18 @@
     {{ include.hint }}
 </span>
 {% endif %}
-<input
-  class="usa-input {{ include.input_classes }} {% if include.disabled %}usa-input--disabled{% endif %}"
+
+<select
+  class="usa-select {{ include.input_classes }} {% if include.disabled %}usa-input--disabled{% endif %}"
   id="{{ include.id }}"
   {% if include.prepopulate %}data-print="{{ include.prepopulate }}"{% endif %}
   name="{{ include.id }}"
-  type="{% if include.type %}{{ include.type }}{% else %}text{% endif %}"
   {% unless include.optional %}required{% endunless%}
-  {% if include.tel_keyboard %}inputmode="numeric" pattern="[0-9]*"{% endif %}
-  {% if include.follow_up %}data-followup="{{ include.follow_up }}" aria-controls="{{ include.follow_up }}" aria-expanded="false"{% endif %}
   {% if include.disabled %}disabled{% endif %}
-  {% if include.input_value %}value="{{ include.input_value }}"{% endif %}
->
+  {% unless include.optional %}required{% endunless%}
+  {% if include.disabled %}disabled{% endif %}>
+    {% assign options = include.options | split: " | " %}
+    {% for option in options %}
+      <option value="{{ option }}" {% if option == include.follow_up_option %}data-followup="{{ include.follow_up }}" aria-controls="{{ include.follow_up }}" aria-expanded="false"{% endif %}>{{ option }}</option>
+    {% endfor %}
+</select>
