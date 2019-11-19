@@ -256,7 +256,35 @@ If fields are not indicated as required, they do not need to be included.
 - `input_value="Custom input value"`: Overrides the `label_text` with a custom `value` for the input.
 - `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
 - `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
-- - `optional="true"`: Only accepts "true", makes radio selection optional instead of required by removing the `required` attribute.
+- `optional="true"`: Only accepts "true", makes radio selection optional instead of required by removing the `required` attribute.
+
+### Select box
+
+```html
+{% include form-fields/_select.html
+  id="title"
+  label_text="Title"
+  options=" | Mr. | Mrs. | Ms. | Dr. | Other (Please specify)"
+%}
+```
+
+#### Required parameters
+
+- `id="foo_bar"`: Needs to use underscores. Maps to `name` and `id` attributes.
+- `label_text="Foo bar"`: This is the label text.
+- `options="Option 1 | Option 2"`: Options are separated by ` | `.
+
+#### Optional Parameters
+
+- `label_classes="class1 class2"`: Adds class names to the label. Can use one or multiple.
+- `optional="true"`: Only accepts "true", makes form field optional instead of required by removing the `required` attribute. Also adds "(Optional)" next to the label text.
+- `hint="This is some hint text"`: Hint text under the label
+- `input_classes="class1 class2"`: Adds class names to the input. Can use one or multiple.
+- `prepopulate="session_storage_id"`: Pre-populates the form field with data from any `sessionStorage` key, which would usually be the `id` of another field.
+- `disabled="true"`: Only accepts true. Disables a field. Use mainly when include is inside a followup.
+- `follow_up="followup_id"`: Must be `id` of a `<div>` that includes followup fields or text. See more about [follow up questions](https://github.com/usds/html-prototype#follow-up-questions)
+- `follow_up_optional="true"`: Only accepts true. Makes the followup question optional.
+- `follow_up_option="Option 2"`: Indicates which option will generate the follow up question. Only allowed per select box. Must match one of the `options`.
 
 ### Date
 

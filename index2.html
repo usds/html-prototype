@@ -11,6 +11,9 @@ layout: default
 <p><strong>Radio follow-up answer:</strong> <span data-print="specify"></span></p>
 <p><strong>Checkbox selection(s):</strong> <span data-print="checkbox_group"></span></p>
 <p><strong>Checkbox followup:</strong> <span data-print="specify2"></span></p>
+<p><strong>Select:</strong> <span data-print="basic_select"></span></p>
+<p><strong>Select 2:</strong> <span data-print="title"></span></p>
+<p><strong>Select 2 followup:</strong> <span data-print="specify_select"></span></p>
 <p><strong>State:</strong> <span data-print="some_state"></span></p>
 
 <h4>Your text</h4>
@@ -80,6 +83,13 @@ layout: default
 </div>
 
 <div class="margin-y-5">
+
+  {% include form-fields/_select.html
+    id="basic_select"
+    label_text="Basic select box"
+    options=" | Option 1 | Option 2"
+    prepopulate="basic_select"
+  %}
 
   {% include form-fields/_state-select.html
     id="some_state"
