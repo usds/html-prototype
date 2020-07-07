@@ -2,8 +2,17 @@
   "name": "abc-prototype",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
+    "build:css": "gulp css",
+    "build:jekyll": "gulp jekyll",
+    "dev": "NODE_ENV=dev gulp watch",
+    "postinstall": "bundle",
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,18 +26,21 @@
   },
   "homepage": "https://github.com/usds/abc-prototype#readme",
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.10",
+    "autoprefixer": "^9.8.4",
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "http-proxy": "^1.18.1",
+    "lodash.template": ">=4.5.0",
     "path": "^0.12.7",
-    "uswds": "^2.1.0",
+    "postcss-csso": "^4.0.0",
+    "sass": "^1.26.3",
+    "uswds": "^2.7.1",
     "uswds-gulp": "github:uswds/uswds-gulp"
   }
 }

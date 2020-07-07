@@ -1,6 +1,7 @@
 %usa-table {
   @include border-box-sizing;
   @include typeset;
+  border-collapse: collapse;
   border-spacing: 0;
   margin: units(2.5) 0;
 
@@ -11,7 +12,7 @@
 
     th,
     td {
-      background-color: color('base-lightest');
+      background-color: color("base-lightest");
     }
   }
 
@@ -21,14 +22,14 @@
 
   th,
   td {
-    @include u-border(1px, 'base-dark');
-    background-color: color('white');
+    @include u-border(1px, "base-dark");
+    background-color: color("white");
     font-weight: $theme-font-weight-normal;
     padding: units(1) units(2);
   }
 
   caption {
-    @include u-font('serif', 'xs');
+    @include u-font("body", "xs");
     font-weight: $theme-font-weight-bold;
     margin-bottom: units(1.5);
     text-align: left;
