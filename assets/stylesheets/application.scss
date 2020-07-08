@@ -1,7 +1,3 @@
----
-crab: claws
----
-
 // Settings
 // -------------------------------------
 @import '../uswds-sass/settings/settings-general';
@@ -21,10 +17,7 @@ crab: claws
 
 // Generic
 // -------------------------------------
-//@import '../uswds-sass/core/font-face';
-//@import '../uswds-sass/core/base';
-
-@import "../uswds/styles.css";
+@import "styles.css";
 
 // Project settings
 @import "variables";
@@ -32,4 +25,3 @@ crab: claws
 // Project CSS
 @import "base/base";
 @import "base/forms";
-@import "prototype/follow-ups";

@@ -7,3 +7,10 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
 -moz-appearance: textfield;
 }
+
+.usa-form-followup {
+  border-left: 3px solid color('base-lighter');
+  margin-bottom: units(2);
+  margin-left: units(4);
+  padding-left: units(3);
+}
