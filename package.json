@@ -27,7 +27,7 @@
   "homepage": "https://github.com/usds/abc-prototype#readme",
   "devDependencies": {
     "autoprefixer": "^9.8.4",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^8.0.0",
@@ -36,6 +36,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "http-proxy": "^1.18.1",
+    "lodash": ">=4.17.19",
     "lodash.template": ">=4.5.0",
     "path": "^0.12.7",
     "postcss-csso": "^4.0.0",
