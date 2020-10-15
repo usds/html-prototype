@@ -42,6 +42,7 @@
     "postcss-csso": "^4.0.0",
     "sass": "^1.26.3",
     "uswds": "^2.7.1",
-    "uswds-gulp": "github:uswds/uswds-gulp"
+    "uswds-gulp": "github:uswds/uswds-gulp",
+    "yargs-parser": ">=13.1.2"
   }
 }
