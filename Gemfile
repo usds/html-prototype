@@ -24,8 +24,8 @@ gem "nokogiri", ">= 1.11.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.13.0"
-  gem "github-pages", ">= 206"
+  gem "jekyll-feed", ">= 0.15.1"
+  gem "github-pages", ">= 214"
   gem "jekyll-seo-tag", ">= 2.6.1"
   gem "jekyll-sitemap", ">= 1.4.0"
   gem "jekyll-redirect-from", ">= 0.15.0"

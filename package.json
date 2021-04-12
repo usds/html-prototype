@@ -33,7 +33,6 @@
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "http-proxy": "^1.18.1",
@@ -46,6 +45,7 @@
     "sass": "^1.32.8",
     "socket.io": ">=2.4.0",
     "uswds": "^2.11.1",
-    "uswds-gulp": "github:uswds/uswds-gulp"
+    "uswds-gulp": "github:uswds/uswds-gulp",
+    "y18n": ">=3.2.2"
   }
 }
